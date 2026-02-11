@@ -1,0 +1,19 @@
+[project]
+name = "prompt-regression-kit"
+version = "0.1.0"
+description = "Minimal LLM prompt regression testing toolkit"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Eren Ozturk", email = "erenozturk@gmail.com" }
+]
+license = { text = "MIT" }
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# UV
+.venv/
+uv.lock
+
+# Virtual Environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+.pytype/
+.pyre/
+.ruff_cache/
+
+# PRK specific
+runs/
+*.jsonl.backup
+.prk/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
