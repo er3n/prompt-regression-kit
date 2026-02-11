@@ -1,24 +1,25 @@
 """Base evaluator with decorator-based registration."""
+
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from ..types import TestCase, EvalResult
+    from ..types import EvalResult, TestCase
 
-_EVALUATORS: dict[str, type['BaseEvaluator']] = {}
+_EVALUATORS: dict[str, type["BaseEvaluator"]] = {}
 
 
 def evaluator(name: str):
     """Decorator to register evaluator."""
 
-    def wrapper(cls: type['BaseEvaluator']) -> type['BaseEvaluator']:
+    def wrapper(cls: type["BaseEvaluator"]) -> type["BaseEvaluator"]:
         _EVALUATORS[name] = cls
         return cls
 
     return wrapper
 
 
-def get_evaluator(name: str) -> type['BaseEvaluator']:
+def get_evaluator(name: str) -> type["BaseEvaluator"]:
     """Get evaluator by name."""
     if name not in _EVALUATORS:
         available = ", ".join(_EVALUATORS.keys())
@@ -35,7 +36,7 @@ class BaseEvaluator(ABC):
     """Base class for all evaluators."""
 
     @abstractmethod
-    def evaluate(self, test_case: 'TestCase', actual_output: str) -> 'EvalResult':
+    def evaluate(self, test_case: "TestCase", actual_output: str) -> "EvalResult":
         """
         Evaluate a single test case.
 
