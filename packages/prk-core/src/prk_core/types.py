@@ -8,6 +8,8 @@ from typing import Any
 class TestCase:
     """A single test case with prompt template and inputs"""
 
+    __test__ = False
+
     id: str
     prompt: str
     inputs: dict[str, str]
@@ -30,6 +32,6 @@ class RunReport:
     run_id: str
     timestamp: str
     dataset_path: str
-    evaluator: list[str]
+    evaluators: list[str]
     results: list[EvalResult]
     summary: dict[str, Any] = field(default_factory=dict)

@@ -12,8 +12,8 @@ license = { text = "MIT" }
 [tool.uv.workspace]
 members = ["packages/*"]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "pre-commit>=4.5.1",
     "pytest>=8.0.0",
     "ruff>=0.6.0",
@@ -38,17 +38,17 @@ exclude = [
 [tool.ruff.lint]
 # Enable rules
 select = [
-    "E",   # pycodestyle errors
-    "W",   # pycodestyle warnings
-    "F",   # pyflakes
-    "I",   # isort (import sorting)
-    "N",   # pep8-naming
-    "UP",  # pyupgrade
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort (import sorting)
+    "N", # pep8-naming
+    "UP", # pyupgrade
 ]
 
 # Ignore specific rules
 ignore = [
-    "E501",  # line too long (handled by formatter)
+    "E501", # line too long (handled by formatter)
 ]
 
 [tool.ruff.format]
@@ -57,3 +57,6 @@ quote-style = "double"
 
 # Indent with spaces
 indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["packages/prk-core/tests"]
